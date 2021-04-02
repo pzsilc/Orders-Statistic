@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Magazyn</title>
+        <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body class='p-5 bg-dark text-light'>
+	<header style="display: flex; justify-content: space-between;">
+			<h1>Statystyka</h1>
+			<!-- Modal btn -->
+			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal">
+				Międzyczas
+			  </button>
+			  
+			  <!-- Modal -->
+			  <div class="modal fade text-dark m-auto" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+				<div class="modal-dialog modal-xl" role="document">
+				  <div class="modal-content">
+					<div class="modal-header">
+					  <h5 class="modal-title" id="modalLabel">Oblicz międzyczas</h5>
+					  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					  </button>
+					</div>
+					<div class="modal-body">
+					  <form method='GET' id='modal-form'>
+						  <div class='d-flex justify-content-between'>
+							<select name='from' class='form-control m-2'>
+								<option value='0'>Złożenie zamówienia przez klienta</option>
+								<option value='1'>Wejście zamówienia do Symfonii</option>
+								<option value='2'>Wystawienie listu przewozowego</option>
+								<option value='3'>Wydanie przesyłki kurierowi</option>
+							</select>
+							<select name='to' class='form-control m-2'>
+								<option value='0'>Złożenie zamówienia przez klienta</option>
+								<option value='1'>Wejście zamówienia do Symfonii</option>
+								<option value='2'>Wystawienie listu przewozowego</option>
+								<option value='3' selected>Wydanie przesyłki kurierowi</option>
+							</select>
+						  </div>
+						  <div class='d-flex justify-content-between m-2'>
+							<span class='text-muted'>Druga wartość powinna być późniejsza od pierwszej</span>
+							<button class='btn btn-primary'>Oblicz</button>
+						  </div>
+						  <div id='modal-content'></div>
+					  </form>
+					</div>
+					<div class="modal-footer">
+					  <button type="submit" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					</div>
+				  </div>
+				</div>
+			  </div>
+	</header>
+	<main>
+	    <table class='table table-dark mt-5 text-center' id='main-table'>
+		<thead>
+		    <tr>
+			<td>ID</td>
+			<td>Złożenie zamówienia przez klienta</td>
+			<td>Wejście zamówienia do Symfonii</td>
+			<td>Wystawienie listu przewozowego</td>
+			<td>Wydanie przesyłki kurierowi</td>
+		    </tr>
+		</thead>
+		<tbody id='root'>
+		</tbody>
+	    <table>
+	</main>
+	<footer>    
+    	    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    	    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    	    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+			<script async src="component.js"></script>
+			<script async src="app.js"></script>
+			<script src="modal.js"></script>
+	</footer>
+    </body>
+</html>
